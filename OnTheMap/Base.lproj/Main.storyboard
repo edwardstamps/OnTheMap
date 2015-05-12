@@ -51,6 +51,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGS-CX-ovG">
+                                <rect key="frame" x="451" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -59,12 +65,17 @@
                             <constraint firstItem="fQb-NI-xwy" firstAttribute="leading" secondItem="o7X-UC-Xde" secondAttribute="leadingMargin" id="NYA-Lt-m88"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fQb-NI-xwy" secondAttribute="trailing" id="WH9-ty-rAJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="352-Uu-ZqC" secondAttribute="trailing" constant="-16" id="aQC-qG-82r"/>
+                            <constraint firstAttribute="centerX" secondItem="SGS-CX-ovG" secondAttribute="centerX" id="aRS-lx-dRC"/>
                             <constraint firstItem="352-Uu-ZqC" firstAttribute="top" secondItem="Umk-UB-kCc" secondAttribute="bottom" id="gD8-pq-PEq"/>
                             <constraint firstItem="vZe-d6-QJp" firstAttribute="top" secondItem="fQb-NI-xwy" secondAttribute="bottom" id="p9r-Yp-rIZ"/>
+                            <constraint firstAttribute="centerY" secondItem="SGS-CX-ovG" secondAttribute="centerY" id="x7d-eL-rU1"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" id="HuO-yh-U65"/>
                     <navigationItem key="navigationItem" id="kt6-za-Wtr"/>
+                    <connections>
+                        <outlet property="debugText" destination="SGS-CX-ovG" id="ggc-Dj-9jA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ya4-Ge-k3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,13 +224,13 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPD-dj-YgZ">
                                 <rect key="frame" x="123" y="246" width="342" height="137"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Location Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u96-GT-eEa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Location Below" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u96-GT-eEa">
                                         <rect key="frame" x="95" y="27" width="153" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOq-9e-XTL">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where in the world?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOq-9e-XTL">
                                         <rect key="frame" x="-12" y="65" width="354" height="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -297,6 +308,12 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="s2Z-tt-EwP">
                                 <rect key="frame" x="191" y="560" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxe-ym-jom">
+                                <rect key="frame" x="261" y="526" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -305,6 +322,7 @@
                             <constraint firstItem="h6L-au-sna" firstAttribute="top" secondItem="NPD-dj-YgZ" secondAttribute="bottom" id="5sL-l5-MZ7"/>
                             <constraint firstItem="Zwy-QX-aDV" firstAttribute="top" secondItem="ect-FX-wRu" secondAttribute="bottom" id="76r-ph-7wL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NPD-dj-YgZ" secondAttribute="trailing" id="ATE-lU-8ac"/>
+                            <constraint firstAttribute="centerX" secondItem="Yxe-ym-jom" secondAttribute="centerX" id="Crx-aN-lyb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ect-FX-wRu" secondAttribute="trailing" id="Cy8-Aj-jLY"/>
                             <constraint firstItem="ect-FX-wRu" firstAttribute="leading" secondItem="khq-HC-Caf" secondAttribute="leadingMargin" id="E2B-Mh-cWR"/>
                             <constraint firstItem="nQE-aa-2GQ" firstAttribute="top" secondItem="s2Z-tt-EwP" secondAttribute="bottom" constant="200" id="G2e-yp-xQ7"/>
@@ -315,6 +333,7 @@
                             <constraint firstItem="NPD-dj-YgZ" firstAttribute="leading" secondItem="khq-HC-Caf" secondAttribute="leadingMargin" id="See-bS-ewZ"/>
                             <constraint firstItem="juc-mV-CZY" firstAttribute="top" secondItem="khq-HC-Caf" secondAttribute="topMargin" id="TJC-2V-uz0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h6L-au-sna" secondAttribute="trailing" id="VMr-gl-oEd"/>
+                            <constraint firstItem="Qjx-Bt-EQR" firstAttribute="top" secondItem="Yxe-ym-jom" secondAttribute="bottom" constant="15" id="XAP-Lm-3DJ"/>
                             <constraint firstItem="ect-FX-wRu" firstAttribute="top" secondItem="juc-mV-CZY" secondAttribute="bottom" id="dXC-AJ-m8q"/>
                             <constraint firstItem="nQE-aa-2GQ" firstAttribute="top" secondItem="Qjx-Bt-EQR" secondAttribute="bottom" constant="30" id="gId-pa-5mr"/>
                             <constraint firstItem="h6L-au-sna" firstAttribute="top" secondItem="NPD-dj-YgZ" secondAttribute="bottom" id="lze-eb-NRi"/>
@@ -335,6 +354,7 @@
                         <outlet property="backView3" destination="h6L-au-sna" id="dm1-cL-gog"/>
                         <outlet property="backgroundView" destination="ect-FX-wRu" id="M2a-c0-8Oa"/>
                         <outlet property="cityTextField" destination="UOq-9e-XTL" id="SDs-IE-QoF"/>
+                        <outlet property="errorText" destination="Yxe-ym-jom" id="Eh8-qV-TSO"/>
                         <outlet property="linkTextField" destination="gwZ-Eh-nKc" id="Egq-wq-ye4"/>
                         <outlet property="mapSubmit" destination="OZI-NE-5p6" id="2jl-XO-3fo"/>
                         <outlet property="mapView" destination="Zwy-QX-aDV" id="uKZ-th-TEA"/>
@@ -509,6 +529,7 @@
                             <constraint firstItem="A8x-re-R7U" firstAttribute="top" secondItem="M3D-lU-VoP" secondAttribute="bottom" constant="50" id="UpL-tP-usg"/>
                             <constraint firstAttribute="centerX" secondItem="A8x-re-R7U" secondAttribute="centerX" id="YW8-ow-GWP"/>
                             <constraint firstItem="T7g-fK-QVK" firstAttribute="top" secondItem="jb6-BQ-b5M" secondAttribute="bottom" constant="75" id="cz5-m3-0Fe"/>
+                            <constraint firstAttribute="centerX" secondItem="jb6-BQ-b5M" secondAttribute="centerX" id="lVy-aF-8XB"/>
                             <constraint firstItem="M3D-lU-VoP" firstAttribute="top" secondItem="qUa-hk-BZM" secondAttribute="bottom" constant="50" id="nQd-I8-Kig"/>
                             <constraint firstAttribute="centerX" secondItem="M3D-lU-VoP" secondAttribute="centerX" constant="31.5" id="phR-wj-kur"/>
                             <constraint firstAttribute="centerX" secondItem="qUa-hk-BZM" secondAttribute="centerX" id="r63-Tt-g5n"/>
@@ -523,6 +544,8 @@
                                 <exclude reference="phR-wj-kur"/>
                                 <exclude reference="78c-QJ-33z"/>
                                 <exclude reference="UpL-tP-usg"/>
+                                <exclude reference="slS-8a-Gs6"/>
+                                <exclude reference="v2q-lI-Vq4"/>
                             </mask>
                         </variation>
                     </view>

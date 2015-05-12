@@ -15,13 +15,7 @@ class UdacityLogin: NSObject {
     /* Shared session */
     var session: NSURLSession
     var appDelegate: AppDelegate!
-    
-//    /* Configuration object */
-//    var config = TMDBConfig()
-    
-    /* Authentication state */
-//    var loginID : String? = nil
-//    var passwordID : String? = nil
+
     
     override init() {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -36,31 +30,12 @@ class UdacityLogin: NSObject {
     
     func authenticateWithViewController(hostViewController: UIViewController, completionHandler: (success: Bool) -> Void) {
         self.setUserID() { (success) in
-            if success {
-                self.getUserID() { (success) in
-                    if success {
-                         completionHandler(success: success)
-                    }
-                    else {
-                        completionHandler(success: success)
-                    }
-                    
-                }
-                
-                }
-            else {
-                completionHandler(success:success)
-            }
+            completionHandler(success: success)
         }
     }
     
     
     func setUserID(completionHandler: (success: Bool) -> Void){
-        
-//        var loginID = self.appDelegate.loginID
-//        var passwordID = self.appDelegate.passwordID
-
-       
         
         let mydataUser = "{\"udacity\": {\"username\": \"" + self.appDelegate.loginID! + "\", \"password\": \"" + self.appDelegate.passwordID! + "\"}}"
         // println(mydataUser)
@@ -80,11 +55,7 @@ class UdacityLogin: NSObject {
         
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { // Handle error…
-               
-              self.appDelegate.errorString = "Login Failed"
-                println("login fail")
-                completionHandler(success: false)
-                
+          
                 return
             }
             
@@ -103,13 +74,20 @@ class UdacityLogin: NSObject {
                 if var sessionIDnow: AnyObject? = account["key"]{
                     // sessionIDnow = sessionIDnow[2,4]
                     self.appDelegate.sessionID = sessionIDnow
+                    self.getUserID(completionHandler)
                     
-                    completionHandler(success: true)
+                    
                     
                     println(self.appDelegate.sessionID)
                     
                     
                 }
+            }
+            else {
+                self.appDelegate.errorString = "Login Failed"
+                println("login fail")
+                completionHandler(success: false)
+                return
             }
         }
         task.resume()
@@ -127,9 +105,7 @@ class UdacityLogin: NSObject {
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { // Handle error...
-               self.appDelegate.errorString! = "Error Reaching Network"
-                println("error")
-                completionHandler(success: false)
+               
                 return
             }
             let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5)) /* subset response data! */
@@ -150,7 +126,12 @@ class UdacityLogin: NSObject {
                // self.completeLogin()
                 completionHandler(success: true)
             }
-            return
+            else {
+            self.appDelegate.errorString = "Error Reaching Network"
+            println("error")
+            completionHandler(success: false)
+            }
+            
         }
         task.resume()
         
@@ -165,40 +146,6 @@ class UdacityLogin: NSObject {
     }
     
     
-//    func authenticateWithViewController(hostViewController: UIViewController, completionHandler: (success: Bool, errorString: String?) -> Void) {
-//        
-//        /* Chain completion handlers for each request so that they run one after the other */
-//        self.setSessionID() {
-//            
-//            if success {
-//                
-//                self.loginWithToken(sessionID) { (success, errorString) in
-//                    
-//                    if success {
-//                        
-//                        self.getuserID(sessionID) { (success, sessionID, errorString) in
-//                            
-//                            if success {
-//                                
-//                                /* Success! We have the sessionID! */
-//                                self.sessionID = sessionID
-//                                
-//                                
-//                            } else {
-//                                completionHandler(success: success, errorString: errorString)
-//                            }
-//                        }
-//                    } else {
-//                        completionHandler(success: success, errorString: errorString)
-//                    }
-//                }
-//            } else {
-//                completionHandler(success: success, errorString: errorString)
-//            }
-//        }
-//    }
-//    
-//    
     
 }
 

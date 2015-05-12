@@ -19,10 +19,10 @@ class ListViewController: UIViewController {
     var students: [Student] = [Student]()
   
    
-  
     
    
     
+    @IBOutlet weak var debugText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +51,13 @@ class ListViewController: UIViewController {
         println(parsedResult)
     if let results = parsedResult["results"] as? [[String : AnyObject]] {
       self.students = Student.studentsFromResults(results)
-       // dispatch_async(dispatch_) {
-          //  self.tableView.reloadData()
-
- }
+      
+        }
+    else {
+        self.debugText.text = self.appDelegate.errorString!
+        }
   }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return students.count
         }

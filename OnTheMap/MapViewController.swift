@@ -74,7 +74,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         if let results = parsedResult["results"] as? [[String : AnyObject]] {
             pins = MapPin.pinsFromResults(results)
           //  println(pins)
-           mapView.addAnnotations(pins)
+            dispatch_async(dispatch_get_main_queue()) {
+           self.mapView.addAnnotations(self.pins)
+            }
         
         }
         }

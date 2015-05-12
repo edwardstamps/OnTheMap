@@ -28,17 +28,11 @@ class ParsePush: NSObject {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         session = NSURLSession.sharedSession()
         super.init()
-        
-}
+        }
+    
     func authenticateWithViewController(hostViewController: UIViewController, completionHandler: (success: Bool) -> Void) {
         self.pushParseInfo() { (success) in
-            if success {
-                completionHandler(success:success)
-            }
-                
-            else {
-                completionHandler(success:success)
-            }
+            completionHandler(success:success)
         }
     }
     

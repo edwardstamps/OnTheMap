@@ -12,7 +12,7 @@ import Foundation
 import UIKit
     
     
-    class ParseLogin: NSObject {
+class ParseLogin: NSObject {
         
         /* Shared session */
         var session: NSURLSession
@@ -37,13 +37,7 @@ import UIKit
         
         func authenticateWithViewController(hostViewController: UIViewController, completionHandler: (success: Bool) -> Void) {
             self.getParseInfo() { (success) in
-                if success {
-                  completionHandler(success:success)
-                    }
-                    
-                else {
-                    completionHandler(success:success)
-                }
+                completionHandler(success:success)
             }
         }
         
