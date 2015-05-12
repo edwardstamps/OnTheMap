@@ -16,6 +16,8 @@ class MapPin : NSObject, MKAnnotation {
     let title: String
     let locationName: String
     let subtitle: String
+    
+    
     let coordinate: CLLocationCoordinate2D
     
     init(dictionary: [String : AnyObject]) {
@@ -25,6 +27,7 @@ class MapPin : NSObject, MKAnnotation {
         
         locationName = dictionary["mapString"] as! String
         subtitle = dictionary["mediaURL"] as! String
+        
         
         coordinate = CLLocationCoordinate2D(latitude: dictionary["latitude"] as! Double, longitude: dictionary["longitude"] as! Double)
         

@@ -12,20 +12,24 @@
 	<dict>
 		<key>30EF315DB55ECAA76BC41F02125621F3FC0D8B51</key>
 		<string>https://github.com/edwardstamps/iOS-apps.git</string>
+		<key>7E562DDFDF6F34B59DF97FACD00BE861F126BCC1</key>
+		<string>https://github.com/edwardstamps/OnTheMap.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>OnTheMap/OnTheMap.xcodeproj</string>
+	<string>OnTheMap.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>30EF315DB55ECAA76BC41F02125621F3FC0D8B51</key>
 		<string>../../..</string>
+		<key>7E562DDFDF6F34B59DF97FACD00BE861F126BCC1</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/edwardstamps/iOS-apps.git</string>
+	<string>https://github.com/edwardstamps/OnTheMap.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>30EF315DB55ECAA76BC41F02125621F3FC0D8B51</string>
+	<string>7E562DDFDF6F34B59DF97FACD00BE861F126BCC1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>30EF315DB55ECAA76BC41F02125621F3FC0D8B51</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOS-apps</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7E562DDFDF6F34B59DF97FACD00BE861F126BCC1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OnTheMap</string>
 		</dict>
 	</array>
 </dict>

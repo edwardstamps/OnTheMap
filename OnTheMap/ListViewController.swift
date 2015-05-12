@@ -40,7 +40,7 @@ class ListViewController: UIViewController {
         
  
     @IBAction func refreshPage(sender: AnyObject) {
-        self.viewDidLoad()
+        self.studentEntry()
     }
        
     

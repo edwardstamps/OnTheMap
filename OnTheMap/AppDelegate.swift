@@ -15,8 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var loginID: String? = nil
+    
+    var passwordID: String? = nil
+    
     var sessionID: AnyObject? = nil
     var nameID: String? = nil
+    
+    var errorString: String? = nil
     
     var dataStruct = [Student]()
     
@@ -28,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var firstNameID: String? = nil
     
     var locationInfo: CLLocation? = nil
+    
+    var cityInfo: String? = nil
+    
+    var linkInfo: String? = nil
     
 
 
