@@ -54,7 +54,7 @@ class ListViewController: UIViewController {
       
         }
     else {
-        self.debugText.text = self.appDelegate.errorString!
+        self.debugText.text = "Error Showing Results"
         }
   }
     
